@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneha Saha | Backend Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --tag-bg: #21262d;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      color: var(--text-bright);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .headline {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+
+    .summary {
+      margin-top: 15px;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      text-decoration: none;
+      color: var(--text-bright);
+      background-color: var(--tag-bg);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-primary {
+      background-color: #238636;
+      border-color: #2ea043;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #2ea043;
+      color: #ffffff;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--text-bright);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+    }
+
+    .skill-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .skill-card h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background-color: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--text-bright);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      font-weight: 600;
+    }
+
+    .project-card p, .project-card ul {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .project-card ul {
+      margin: 10px 0 14px 18px;
+    }
+
+    .project-card li {
+      margin-bottom: 4px;
+    }
+
+    .repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .repo-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease;
+    }
+
+    .repo-card:hover {
+      border-color: var(--accent);
+    }
+
+    .repo-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      word-break: break-all;
+    }
+
+    .repo-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 8px 0 12px 0;
+      flex-grow: 1;
+    }
+
+    .info-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .info-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .info-title {
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+
+    .info-meta {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+    }
+
+    .info-card ul {
+      margin-left: 18px;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Profile / Contact Info -->
+    <header>
+      <h1>Sneha Saha</h1>
+      <p class="headline">Backend Developer | Spring Boot | REST APIs | Software Tester</p>
+      <p class="summary">
+        Java and Python developer with hands-on experience building backend applications using Spring Boot, REST APIs, MySQL, and MongoDB. Familiar with MVC architecture, exception handling, API testing, and scalable backend workflows.
+      </p>
+
+      <div class="contact-bar">
+        <a href="mailto:sahasneha773@gmail.com" class="btn">✉ sahasneha773@gmail.com</a>
+        <a href="tel:+919123822426" class="btn">📞 +91 9123822426</a>
+        <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">⚡ GitHub Profile</a>
+        <a href="resume.pdf" class="btn btn-primary" download>📄 Download Resume</a>
+      </div>
+    </header>
+
+    <!-- Technical Skills from Resume -->
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Languages</h3>
+          <div class="tags">
+            <span class="tag">Java (Core & Advanced)</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Python (Fundamentals)</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Frameworks & Web Tech</h3>
+          <div class="tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Spring Data JPA</span>
+            <span class="tag">Hibernate</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Servlets</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Databases</h3>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">MongoDB Atlas</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Tools & Concepts</h3>
+          <div class="tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Maven</span>
+            <span class="tag">Unix</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">MVC Architecture</span>
+            <span class="tag">OOPs</span>
+            <span class="tag">DBMS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Resume Projects -->
+    <section>
+      <h2>Featured Resume Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">1. User Management System</span>
+          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Project ↗</a>
+        </div>
+        <div class="tags" style="margin-bottom: 12px;">
+          <span class="tag">FastAPI</span>
+          <span class="tag">MongoDB Atlas</span>
+          <span class="tag">Swagger UI</span>
+        </div>
+        <ul>
+          <li>Developed RESTful CRUD APIs using FastAPI with asynchronous endpoint handling and request validation.</li>
+          <li>Integrated MongoDB Atlas for cloud-based document storage and efficient database operations.</li>
+          <li>Implemented exception handling and structured API responses to improve backend reliability and debugging.</li>
+          <li>Used Swagger UI for API documentation, endpoint testing, and request validation.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">2. Banking System</span>
+          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Project ↗</a>
+        </div>
+        <div class="tags" style="margin-bottom: 12px;">
+          <span class="tag">Spring Boot v3.x</span>
+          <span class="tag">Java 21</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Spring Data JPA</span>
+        </div>
+        <ul>
+          <li>Engineered high-performance Data Exchange Interfaces for operations like account creation and fund transfers.</li>
+          <li>Designed a Normalized Schema in MySQL to ensure data integrity and maintained ACID-compliant logic.</li>
+          <li>Optimized CRUD operations and service endpoint performance for high-frequency transactions.</li>
+          <li>Conducted exhaustive testing via Postman to ensure seamless system communication.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">3. Expense Tracker</span>
+          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Project ↗</a>
+        </div>
+        <div class="tags" style="margin-bottom: 12px;">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Java 17</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Spring Data JPA (Hibernate)</span>
+        </div>
+        <ul>
+          <li>Built a backend-based expense tracking application with complete CRUD functionality for financial record management.</li>
+          <li>Structured the application using layered MVC architecture with separate controller, service, and repository layers.</li>
+          <li>Used Spring Data JPA and Hibernate for entity mapping and database interaction with MySQL.</li>
+          <li>Implemented centralized exception handling (<code>@ControllerAdvice</code>) to standardize API responses and simplify debugging.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- All GitHub Repositories (Auto-Fetched Live) -->
+    <section>
+      <h2>All GitHub Repositories</h2>
+      <div class="repos-grid" id="github-repos">
+        <p style="color: var(--muted); font-size: 0.9rem;">Fetching repositories from GitHub...</p>
+      </div>
+    </section>
+
+    <!-- Experience from Resume -->
+    <section>
+      <h2>Experience</h2>
+      <div class="info-card">
+        <div class="info-header">
+          <span class="info-title">Data Analytics Intern — Techno Exponent</span>
+          <span class="info-meta">Jun 2025 – Sep 2025</span>
+        </div>
+        <ul>
+          <li>Built interactive Power BI dashboards by transforming and analysing structured datasets to generate meaningful business insights.</li>
+          <li>Filtered and organized complex datasets using Power Query and DAX to create clear visual reports for performance analysis and edge-case identification.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education from Resume -->
+    <section>
+      <h2>Education</h2>
+      <div class="info-card">
+        <div class="info-header">
+          <span class="info-title">Bachelor of Computer Applications (BCA)</span>
+          <span class="info-meta">Expected June 2026 | SGPA: 7.55+</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--muted); margin-bottom: 6px;">Bengal School of Technology & Management, affiliated with MAKAUT, Kolkata</p>
+        <p style="font-size: 0.85rem; color: var(--muted);">Aditya Birla Vani Bharati — Class X (76%) & Class XII (60%)</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© Sneha Saha · Hosted on GitHub Pages</p>
+    </footer>
+
+  </div>
+
+  <!-- Dynamic GitHub Repos Fetcher -->
+  <script>
+    const username = 'SnehaSaha14';
+    const reposContainer = document.getElementById('github-repos');
+
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`)
+      .then(response => {
+        if (!response.ok) throw new Error('Network error');
+        return response.json();
+      })
+      .then(repos => {
+        reposContainer.innerHTML = '';
+        if (repos.length === 0) {
+          reposContainer.innerHTML = '<p style="color: var(--muted); font-size: 0.9rem;">No public repositories found.</p>';
+          return;
+        }
+
+        repos.forEach(repo => {
+          // Exclude GitHub Pages profile repository if desired
+          if (repo.name.toLowerCase() === `${username.toLowerCase()}.github.io`) return;
+
+          const card = document.createElement('div');
+          card.className = 'repo-card';
+          card.innerHTML = `
+            <div>
+              <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+              <p>${repo.description || 'No description provided.'}</p>
+            </div>
+            <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--muted);">
+              ${repo.language ? `● ${repo.language}` : ''}
+            </div>
+          `;
+          reposContainer.appendChild(card);
+        });
+      })
+      .catch(error => {
+        reposContainer.innerHTML = `
+          <div class="repo-card">
+            <a href="https://github.com/${username}?tab=repositories" target="_blank">View All Repositories on GitHub ↗</a>
+            <p>Directly browse all repositories on GitHub profile.</p>
+          </div>
+        `;
+      });
+  </script>
+</body>
+</html>
