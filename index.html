@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sneha Saha | Backend Developer Portfolio</title>
+  <title>Sneha Saha | Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
+      --bg-dark: #0b0f19;
+      --card-bg: rgba(22, 27, 34, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
       --text: #c9d1d9;
-      --text-bright: #f0f6fc;
+      --text-bright: #ffffff;
       --muted: #8b949e;
-      --accent: #58a6ff;
-      --tag-bg: #21262d;
-      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-main: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
+
+      /* Accent Gradients */
+      --grad-cyan-purple: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #9055ff 100%);
+      --grad-sunset: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+      --grad-emerald: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+      --grad-amber: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+      --grad-electric: linear-gradient(135deg, #ff007f 0%, #7928ca 100%);
     }
 
     * {
@@ -28,176 +33,240 @@
     }
 
     body {
-      background-color: var(--bg);
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(79, 172, 254, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(144, 85, 255, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(0, 242, 254, 0.04) 0px, transparent 50%);
+      background-attachment: fixed;
       color: var(--text);
       font-family: var(--font-main);
       line-height: 1.6;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     .container {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
+    /* Header & Hero Section */
     header {
-      padding-bottom: 30px;
-      border-bottom: 1px solid var(--border);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 35px;
       margin-bottom: 35px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--grad-cyan-purple);
     }
 
     h1 {
-      color: var(--text-bright);
-      font-size: 2.2rem;
-      font-weight: 700;
+      font-size: 2.5rem;
+      font-weight: 800;
       letter-spacing: -0.5px;
+      background: var(--grad-cyan-purple);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
 
     .headline {
-      color: var(--accent);
+      color: #00f2fe;
       font-family: var(--font-mono);
-      font-size: 1rem;
-      margin-top: 6px;
+      font-size: 0.95rem;
+      margin-top: 8px;
+      font-weight: 500;
     }
 
     .summary {
-      margin-top: 15px;
+      margin-top: 16px;
       color: var(--text);
-      font-size: 0.98rem;
+      font-size: 1rem;
+      max-width: 780px;
     }
 
+    /* Action Buttons */
     .contact-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 24px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 6px;
-      font-size: 0.88rem;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
       text-decoration: none;
       color: var(--text-bright);
-      background-color: var(--tag-bg);
-      border: 1px solid var(--border);
-      transition: border-color 0.2s, background-color 0.2s;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #00f2fe;
+      color: #00f2fe;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
     }
 
     .btn-primary {
-      background-color: #238636;
-      border-color: #2ea043;
-      color: #ffffff;
-      font-weight: 600;
+      background: var(--grad-cyan-purple);
+      border: none;
+      color: #0b0f19;
+      font-weight: 700;
     }
 
     .btn-primary:hover {
-      background-color: #2ea043;
-      color: #ffffff;
+      opacity: 0.92;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(79, 172, 254, 0.4);
     }
 
+    /* Section Headings */
     section {
       margin-bottom: 40px;
     }
 
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       color: var(--text-bright);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
+      gap: 10px;
+      font-weight: 700;
     }
 
+    h2 .section-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
 
     .skill-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 18px 20px;
+      position: relative;
+      transition: border-color 0.25s ease, transform 0.2s ease;
     }
+
+    .skill-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .skill-card.c1 { border-top: 3px solid #00f2fe; }
+    .skill-card.c2 { border-top: 3px solid #ff758c; }
+    .skill-card.c3 { border-top: 3px solid #00b09b; }
+    .skill-card.c4 { border-top: 3px solid #ffd200; }
 
     .skill-card h3 {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-      margin-bottom: 8px;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
+    .skill-card.c1 h3 { color: #00f2fe; }
+    .skill-card.c2 h3 { color: #ff758c; }
+    .skill-card.c3 h3 { color: #00b09b; }
+    .skill-card.c4 h3 { color: #ffd200; }
+
+    /* Colorful README-Style Tech Badges */
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
     }
 
-    .tag {
-      background-color: var(--tag-bg);
-      border: 1px solid var(--border);
-      color: var(--text-bright);
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 0.8rem;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.78rem;
       font-family: var(--font-mono);
+      font-weight: 500;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease;
     }
 
+    .badge:hover {
+      transform: scale(1.05);
+    }
+
+    .badge-blue    { background: rgba(0, 242, 254, 0.12); color: #38bdf8; border-color: rgba(56, 189, 248, 0.25); }
+    .badge-purple  { background: rgba(144, 85, 255, 0.12); color: #c084fc; border-color: rgba(192, 132, 252, 0.25); }
+    .badge-green   { background: rgba(0, 201, 167, 0.12); color: #34d399; border-color: rgba(52, 211, 153, 0.25); }
+    .badge-amber   { background: rgba(255, 177, 66, 0.12); color: #fbbf24; border-color: rgba(251, 191, 36, 0.25); }
+    .badge-pink    { background: rgba(255, 75, 145, 0.12); color: #f472b6; border-color: rgba(244, 114, 182, 0.25); }
+
+    /* Project Cards */
     .project-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 22px;
       margin-bottom: 16px;
-      transition: transform 0.15s ease, border-color 0.15s ease;
+      transition: all 0.25s ease;
+      position: relative;
     }
 
     .project-card:hover {
-      border-color: var(--accent);
+      border-color: rgba(0, 242, 254, 0.4);
       transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
     }
 
     .project-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
     .project-title {
       font-size: 1.15rem;
       color: var(--text-bright);
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .project-card p, .project-card ul {
-      font-size: 0.92rem;
-      color: var(--text);
-    }
-
-    .project-card ul {
-      margin: 10px 0 14px 18px;
-    }
-
-    .project-card li {
-      margin-bottom: 4px;
-    }
-
+    /* Dynamic GitHub Grid */
     .repos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -205,26 +274,31 @@
     }
 
     .repo-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
       padding: 16px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: border-color 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .repo-card:hover {
-      border-color: var(--accent);
+      border-color: #9055ff;
+      transform: translateY(-2px);
     }
 
     .repo-card a {
-      color: var(--accent);
+      color: #00f2fe;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
       word-break: break-all;
+    }
+
+    .repo-card a:hover {
+      text-decoration: underline;
     }
 
     .repo-card p {
@@ -234,11 +308,12 @@
       flex-grow: 1;
     }
 
+    /* Info Cards (Experience & Education) */
     .info-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
       margin-bottom: 14px;
     }
 
@@ -250,27 +325,22 @@
     }
 
     .info-title {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-bright);
     }
 
     .info-meta {
-      color: var(--muted);
+      color: #00f2fe;
       font-size: 0.85rem;
       font-family: var(--font-mono);
-    }
-
-    .info-card ul {
-      margin-left: 18px;
-      font-size: 0.92rem;
     }
 
     footer {
       text-align: center;
       color: var(--muted);
       font-size: 0.85rem;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      border-top: 1px solid var(--card-border);
       margin-top: 50px;
     }
   </style>
@@ -278,211 +348,191 @@
 <body>
   <div class="container">
     
-    <!-- Profile / Contact Info -->
+    <!-- Profile / Header Section -->
     <header>
       <h1>Sneha Saha</h1>
-      <p class="headline">Backend Developer | Spring Boot | REST APIs | Software Tester</p>
-      <p class=" professional summary">
-        A developer comfortable with Java and Python for backend works. I have hands-on practice and made multiple projects with REST APIs, along with working on databases like MySQL and MongoDB and writing clean, reliable code for real projec. 
+      <p class="headline">⚡ Backend Developer | Spring Boot | REST APIs | Software Quality</p>
+      <p class="summary">
+        Passionate Backend Engineer experienced in Java, Spring Boot, and Python. Specialized in building scalable REST APIs, structuring relational and NoSQL databases (MySQL, MongoDB), and writing clean, testable system code.
       </p>
 
       <div class="contact-bar">
-        <a href="mailto:sahasneha773@gmail.com" class="btn">✉ sahasneha773@gmail.com</a>
-        <a href="tel:+919123822426" class="btn"> +91 9123822426</a>
-        <a href="https://github.com/SnehaSaha14" target="_blank" class="btn"> View GitHub Profile</a>
-        <a href="resume.pdf" class="btn btn-primary" download> View Resume</a>
+        <a href="mailto:sahasneha773@gmail.com" class="btn">✉️ sahasneha773@gmail.com</a>
+        <a href="tel:+919123822426" class="btn">📞 +91 9123822426</a>
+        <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">🐙 GitHub Profile</a>
+        <a href="resume.pdf" class="btn btn-primary" download>📄 Download Resume</a>
       </div>
     </header>
 
-    <!-- Technical Skills from Resume -->
+    <!-- Technical Skills with Badges -->
     <section>
-      <h2>Technical Skills</h2>
+      <h2><span class="section-dot" style="background: #00f2fe;"></span>Technical Skills</h2>
       <div class="skills-grid">
-        <div class="skill-card">
+        
+        <div class="skill-card c1">
           <h3>Languages</h3>
           <div class="tags">
-            <span class="tag">Java (Core & Advanced)</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Python (Fundamentals)</span>
+            <span class="badge badge-blue">☕ Java 17/21</span>
+            <span class="badge badge-amber">🗄️ SQL</span>
+            <span class="badge badge-green">🐍 Python</span>
           </div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card c2">
           <h3>Frameworks & Web Tech</h3>
           <div class="tags">
-            <span class="tag">Spring Boot</span>
-            <span class="tag">Spring Data JPA</span>
-            <span class="tag">Hibernate</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Servlets</span>
+            <span class="badge badge-green">🍃 Spring Boot</span>
+            <span class="badge badge-blue">⚙️ Spring Data JPA</span>
+            <span class="badge badge-pink">🔄 Hibernate</span>
+            <span class="badge badge-amber">⚡ FastAPI</span>
+            <span class="badge badge-purple">🌐 Servlets</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h3>Databases</h3>
+        <div class="skill-card c3">
+          <h3>Databases & Cloud</h3>
           <div class="tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">DynamoDB</span>
-            <span class="tag">MongoDB Atlas</span>
+            <span class="badge badge-blue">🐬 MySQL</span>
+            <span class="badge badge-green">🍃 MongoDB</span>
+            <span class="badge badge-amber">⚡ DynamoDB</span>
+            <span class="badge badge-purple">☁️ MongoDB Atlas</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h3>Tools & Concepts</h3>
+        <div class="skill-card c4">
+          <h3>Tools & Principles</h3>
           <div class="tags">
-            <span class="tag">Git</span>
-            <span class="tag">GitHub</span>
-            <span class="tag">Postman</span>
-            <span class="tag">Maven</span>
-            <span class="tag">Unix</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">MVC Architecture</span>
-            <span class="tag">OOPs</span>
-            <span class="tag">DBMS</span>
+            <span class="badge badge-pink">🐙 Git & GitHub</span>
+            <span class="badge badge-amber">📬 Postman</span>
+            <span class="badge badge-blue">📦 Maven</span>
+            <span class="badge badge-purple">🐧 Unix/Linux</span>
+            <span class="badge badge-green">📊 Power BI</span>
+            <span class="badge badge-blue">🧩 OOPs & MVC</span>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Featured Resume Projects -->
+    <!-- Featured Projects -->
     <section>
-      <h2>Featured Resume Projects</h2>
+      <h2><span class="section-dot" style="background: #ff758c;"></span>Featured Projects</h2>
 
-      <!-- Project 1 -->
       <div class="project-card">
         <div class="project-header">
           <span class="project-title">1. User Management System</span>
-          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Project ↗</a>
+          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Source ↗</a>
         </div>
         <div class="tags" style="margin-bottom: 12px;">
-          <span class="tag">FastAPI</span>
-          <span class="tag">MongoDB Atlas</span>
-          <span class="tag">Swagger UI</span>
+          <span class="badge badge-green">FastAPI</span>
+          <span class="badge badge-purple">MongoDB Atlas</span>
+          <span class="badge badge-blue">Swagger UI</span>
         </div>
+        <p style="font-size: 0.9rem; color: var(--text);">Complete authentication and identity lifecycle management with fast response latency and interactive API documentation.</p>
       </div>
 
-      <!-- Project 2 -->
       <div class="project-card">
         <div class="project-header">
           <span class="project-title">2. Banking System</span>
-          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Project ↗</a>
+          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Source ↗</a>
         </div>
         <div class="tags" style="margin-bottom: 12px;">
-          <span class="tag">Spring Boot v3.x</span>
-          <span class="tag">Java 21</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Spring Data JPA</span>
+          <span class="badge badge-green">Spring Boot v3</span>
+          <span class="badge badge-blue">Java 21</span>
+          <span class="badge badge-amber">MySQL</span>
+          <span class="badge badge-purple">Spring Data JPA</span>
         </div>
+        <p style="font-size: 0.9rem; color: var(--text);">Secure transactional service handling balance calculations, account ledgers, and ACID-compliant relational data management.</p>
       </div>
 
-      <!-- Project 3 -->
       <div class="project-card">
         <div class="project-header">
           <span class="project-title">3. Expense Tracker</span>
-          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Project ↗</a>
+          <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">View Source ↗</a>
         </div>
         <div class="tags" style="margin-bottom: 12px;">
-          <span class="tag">Spring Boot</span>
-          <span class="tag">Java 17</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Spring Data JPA (Hibernate)</span>
+          <span class="badge badge-green">Spring Boot</span>
+          <span class="badge badge-blue">Java 17</span>
+          <span class="badge badge-amber">MySQL</span>
+          <span class="badge badge-pink">Hibernate ORM</span>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text);">RESTful financial tracking application providing automated categorization and spend analytics across dynamic reporting windows.</p>
+      </div>
+    </section>
+
+    <!-- Dynamic Repositories -->
+    <section>
+      <h2><span class="section-dot" style="background: #9055ff;"></span>Live GitHub Repositories</h2>
+      <div class="repos-grid" id="github-repos">
+        <div class="repo-card">
+          <a href="https://github.com/SnehaSaha14/BookSphere" target="_blank">BookSphere ↗</a>
+          <p>A book platform and management repository hosted on GitHub for organizing collections and cataloging records.</p>
+          <div class="tags">
+            <span class="badge badge-blue">Servlets</span>
+            <span class="badge badge-purple">JSP</span>
+          </div>
         </div>
       </div>
     </section>
 
-     <!-- Additional Repositories on GitHub-->
+    <!-- Experience -->
     <section>
-      <h2>Other Repositories</h2>
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">BookSphere</span>
-          <a href="https://github.com/SnehaSaha14/BookSphere" target="_blank" class="btn">View Repository ↗️</a>
-        </div>
-        <div class="tags" style="margin-bottom: 12px;">
-          <span class="tag">JDBC</span>
-          <span class="tag">JSP</span>
-          <span class="tag">Servlets</span>
-        </div>
-        <p>A book platform and management repository hosted on GitHub for organizing collections and cataloging records.</p>
-      </div>
-    </section>
-
-
-    <!-- Experience from Resume -->
-    <section>
-      <h2>Experience</h2>
+      <h2><span class="section-dot" style="background: #00b09b;"></span>Work Experience</h2>
       <div class="info-card">
         <div class="info-header">
           <span class="info-title">Data Analytics Intern — Techno Exponent</span>
           <span class="info-meta">Jun 2025 – Sep 2025</span>
         </div>
+        <p style="font-size: 0.92rem; color: var(--text);">Engineered analytical pipelines, handled structured datasets, and generated automated visualizations to surface key business metrics.</p>
       </div>
     </section>
 
-    <!-- Education from Resume -->
+    <!-- Education -->
     <section>
-      <h2>Education</h2>
+      <h2><span class="section-dot" style="background: #ffd200;"></span>Education</h2>
       <div class="info-card">
         <div class="info-header">
-          <span class="info-title">Bachelors of Computer Applications (BCA)</span>
-          <span class="info-meta">July | SGPA: 7.80+</span>
+          <span class="info-title">Bachelor of Computer Applications (BCA)</span>
+          <span class="info-meta">SGPA: 7.80+</span>
         </div>
-        <p style="font-size: 0.92rem; color: var(--muted); margin-bottom: 6px;">Bengal School of Technology & Management, affiliated with MAKAUT, Kolkata</p>
-        <p style="font-size: 0.85rem; color: var(--muted);">Aditya Birla Vani Bharati — Class X (76%) & Class XII (60%)</p>
+        <p style="font-size: 0.92rem; color: var(--muted); margin-bottom: 6px;">Bengal School of Technology & Management, MAKAUT, Kolkata</p>
+        <p style="font-size: 0.85rem; color: var(--muted);">Aditya Birla Vani Bharati — Class X (76%) | Class XII (60%)</p>
       </div>
     </section>
 
     <footer>
-      <p>© Sneha Saha · Hosted on GitHub Pages</p>
+      <p>Built with ❤️ by Sneha Saha · Hosted on GitHub Pages</p>
     </footer>
 
   </div>
 
-  <!-- Dynamic GitHub Repos Fetcher -->
+  <!-- Dynamic GitHub Repos Fetcher (Fixed Bug) -->
   <script>
     const username = 'SnehaSaha14';
     const reposContainer = document.getElementById('github-repos');
 
-    fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`)
-      .then(response => {
-        if (!response.ok) throw new Error('Network error');
-        return response.json();
-      })
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`)
+      .then(res => res.ok ? res.json() : Promise.reject())
       .then(repos => {
+        if (!repos.length) return;
         reposContainer.innerHTML = '';
-        if (repos.length === 0) {
-          reposContainer.innerHTML = '<p style="color: var(--muted); font-size: 0.9rem;">No public repositories found.</p>';
-          return;
-        }
-
         repos.forEach(repo => {
-          // Exclude GitHub Pages profile repository if desired
           if (repo.name.toLowerCase() === `${username.toLowerCase()}.github.io`) return;
-
           const card = document.createElement('div');
           card.className = 'repo-card';
           card.innerHTML = `
             <div>
-              <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-              <p>${repo.description || 'No description provided.'}</p>
+              <a href="${repo.html_url}" target="_blank">${repo.name} ↗</a>
+              <p>${repo.description || 'Repository hosted on GitHub.'}</p>
             </div>
-            <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--muted);">
+            <div style="font-size: 0.78rem; font-family: var(--font-mono); color: #38bdf8;">
               ${repo.language ? `● ${repo.language}` : ''}
             </div>
           `;
           reposContainer.appendChild(card);
         });
       })
-      .catch(error => {
-        reposContainer.innerHTML = `
-          <div class="repo-card">
-            <a href="https://github.com/${username}?tab=repositories" target="_blank">View All Repositories on GitHub ↗</a>
-            <p>Directly browse all repositories on GitHub profile.</p>
-          </div>
-        `;
-      });
+      .catch(() => {});
   </script>
 </body>
 </html>
