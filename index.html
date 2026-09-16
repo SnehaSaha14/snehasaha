@@ -9,20 +9,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     <style>
+ <style>
   :root {
-    /* Visible Silk Mocha & Chocolate Theme */
-    --bg: #dbcab8;                  /* Rich warm milk chocolate */
-    --card-bg: #f9f5ef;             /* Froth-toned warm card surface */
-    --border: #c4b09c;              /* Medium cocoa border */
-    --border-strong: #a8917b;       /* Structured dark chocolate border */
-    --text-main: #24140d;           /* Deep roasted espresso */
-    --text-body: #3d271e;           /* Rich dark cocoa */
-    --text-muted: #73594d;          /* Soft taupe secondary text */
-    --accent: #8c3b0d;              /* Terracotta caramel highlight */
-    --accent-subtle: #f0e4d8;       /* Warm tint */
-    --primary: #4e2e1e;             /* Roasted mocha button & borders */
-    --primary-hover: #321c11;       /* Dark espresso button hover */
-    --pill-bg: #cfbcab;             /* Warm cocoa badge surface */
+    /* Refined Professional Gray Palette */
+    --bg: #e2e8f0;                  /* Distinct, balanced slate gray (not white, not dark) */
+    --card-bg: #ffffff;             /* Clean, solid card surface for high contrast */
+    --border: #cbd5e1;              /* Crisp light-gray border */
+    --border-strong: #94a3b8;       /* Defined slate border */
+    --text-main: #0f172a;           /* Deep charcoal/slate for headings */
+    --text-body: #334155;           /* Readable neutral dark gray for body copy */
+    --text-muted: #64748b;          /* Medium slate for secondary metadata */
+    --accent: #2563eb;              /* Clean technical blue highlight */
+    --accent-subtle: #eff6ff;       /* Light blue tint */
+    --primary: #1e293b;             /* Deep slate-charcoal button & top border */
+    --primary-hover: #0f172a;       /* Dark hover state */
+    --pill-bg: #f1f5f9;             /* Light gray tag surface */
     --font-sans: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
@@ -49,12 +50,12 @@
   /* Profile Card */
   .profile-card {
     background: var(--card-bg);
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--border);
     border-top: 5px solid var(--primary);
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 34px 38px;
     margin-bottom: 28px;
-    box-shadow: 0 4px 16px rgba(36, 20, 13, 0.08);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
   }
 
   h1 {
@@ -104,7 +105,7 @@
     border-radius: 6px;
     text-decoration: none;
     border: 1px solid var(--border-strong);
-    background: #fdfbf7;
+    background: #ffffff;
     color: var(--text-main);
     cursor: pointer;
     transition: all 0.2s ease;
@@ -118,7 +119,7 @@
 
   .btn-primary {
     background: var(--primary);
-    color: #fdfbf7;
+    color: #ffffff;
     border-color: var(--primary);
   }
 
@@ -149,7 +150,7 @@
     height: 1px;
     background: var(--border-strong);
     margin-left: 12px;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   /* Structural Cards */
@@ -159,7 +160,7 @@
     border-radius: 8px;
     padding: 22px 24px;
     margin-bottom: 14px;
-    box-shadow: 0 2px 8px rgba(36, 20, 13, 0.05);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
     transition: border-color 0.2s ease, transform 0.2s ease;
   }
 
@@ -282,7 +283,7 @@
   }
 
   .accordion-trigger:hover {
-    background: #eedfd0;
+    background: #f1f5f9;
     border-color: var(--primary);
     color: var(--primary);
   }
@@ -311,6 +312,7 @@
     color: var(--text-muted);
     font-family: var(--font-mono);
   }
+</style>
 </style>
    
   </style>
