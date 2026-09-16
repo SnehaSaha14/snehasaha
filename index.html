@@ -8,313 +8,310 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    <style>
- <style>
-  :root {
-    /* Refined Professional Gray Palette */
-    --bg: #e2e8f0;                  /* Distinct, balanced slate gray (not white, not dark) */
-    --card-bg: #ffffff;             /* Clean, solid card surface for high contrast */
-    --border: #cbd5e1;              /* Crisp light-gray border */
-    --border-strong: #94a3b8;       /* Defined slate border */
-    --text-main: #0f172a;           /* Deep charcoal/slate for headings */
-    --text-body: #334155;           /* Readable neutral dark gray for body copy */
-    --text-muted: #64748b;          /* Medium slate for secondary metadata */
-    --accent: #2563eb;              /* Clean technical blue highlight */
-    --accent-subtle: #eff6ff;       /* Light blue tint */
-    --primary: #1e293b;             /* Deep slate-charcoal button & top border */
-    --primary-hover: #0f172a;       /* Dark hover state */
-    --pill-bg: #f1f5f9;             /* Light gray tag surface */
-    --font-sans: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-  }
+    :root {
+      /* Definite Light Chocolate Theme */
+      --bg: #d2bba8;                  /* Clear light milk chocolate background */
+      --card-bg: #fbf7f2;             /* Warm cream card background */
+      --border: #baa08c;              /* Soft chocolate border */
+      --border-strong: #967864;       /* Deep chocolate border */
+      --text-main: #24140c;           /* Roasted dark espresso heading */
+      --text-body: #3c2419;           /* Dark chocolate text */
+      --text-muted: #735545;          /* Cocoa taupe for metadata */
+      --accent: #873600;              /* Caramel accent */
+      --primary: #4a2818;             /* Deep mocha buttons */
+      --primary-hover: #2e150a;       /* Dark cocoa hover */
+      --pill-bg: #e6d7ca;             /* Froth/biscuit badge fill */
+      --font-sans: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    background-color: var(--bg);
-    color: var(--text-body);
-    font-family: var(--font-sans);
-    line-height: 1.6;
-    padding: 50px 20px;
-  }
+    html, body {
+      background-color: var(--bg) !important;
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+    }
 
-  .container {
-    max-width: 880px;
-    margin: 0 auto;
-  }
+    body {
+      padding: 50px 20px;
+    }
 
-  /* Profile Card */
-  .profile-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-top: 5px solid var(--primary);
-    border-radius: 8px;
-    padding: 34px 38px;
-    margin-bottom: 28px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
-  }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
 
-  h1 {
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--text-main);
-    letter-spacing: -0.02em;
-  }
+    /* Profile Card */
+    .profile-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-strong);
+      border-top: 5px solid var(--primary);
+      border-radius: 8px;
+      padding: 34px 38px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 14px rgba(36, 20, 12, 0.12);
+    }
 
-  .subtitle {
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    color: var(--accent);
-    font-weight: 600;
-    margin-top: 4px;
-  }
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
 
-  .location-bar {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 4px;
-    font-family: var(--font-mono);
-  }
+    .subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 4px;
+    }
 
-  .summary {
-    font-size: 0.94rem;
-    color: var(--text-body);
-    margin-top: 15px;
-    border-top: 1px solid var(--border);
-    padding-top: 15px;
-  }
+    .location-bar {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-family: var(--font-mono);
+    }
 
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 22px;
-  }
+    .summary {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      margin-top: 15px;
+      border-top: 1px solid var(--border);
+      padding-top: 15px;
+    }
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 15px;
-    font-size: 0.84rem;
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    border: 1px solid var(--border-strong);
-    background: #ffffff;
-    color: var(--text-main);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
 
-  .btn:hover {
-    background: var(--pill-bg);
-    border-color: var(--primary);
-    color: var(--primary);
-  }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 15px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid var(--border-strong);
+      background: #ffffff;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
 
-  .btn-primary {
-    background: var(--primary);
-    color: #ffffff;
-    border-color: var(--primary);
-  }
+    .btn:hover {
+      background: var(--pill-bg);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
 
-  .btn-primary:hover {
-    background: var(--primary-hover);
-    border-color: var(--primary-hover);
-    color: #ffffff;
-  }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
 
-  /* Section Titles */
-  section {
-    margin-bottom: 32px;
-  }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+      color: #ffffff;
+    }
 
-  .section-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+    /* Section Titles */
+    section {
+      margin-bottom: 32px;
+    }
 
-  .section-title::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--border-strong);
-    margin-left: 12px;
-    opacity: 0.5;
-  }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-  /* Structural Cards */
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 22px 24px;
-    margin-bottom: 14px;
-    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-strong);
+      margin-left: 12px;
+      opacity: 0.5;
+    }
 
-  .card:hover {
-    border-color: var(--border-strong);
-    transform: translateY(-1px);
-  }
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 8px rgba(36, 20, 12, 0.08);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
 
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-    gap: 8px;
-  }
+    .card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
 
-  .card-title {
-    font-size: 1.02rem;
-    font-weight: 700;
-    color: var(--text-main);
-  }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+      gap: 8px;
+    }
 
-  .meta-tag {
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    font-weight: 600;
-  }
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
 
-  .tech-stack-row {
-    font-size: 0.84rem;
-    color: var(--accent);
-    font-family: var(--font-mono);
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
+    .meta-tag {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
 
-  /* Clean Bullet Points */
-  ul.bullet-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
+    .tech-stack-row {
+      font-size: 0.84rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-  ul.bullet-list li {
-    position: relative;
-    padding-left: 18px;
-    font-size: 0.88rem;
-    color: var(--text-body);
-    margin-bottom: 6px;
-    line-height: 1.55;
-  }
+    /* Bullet Points */
+    ul.bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
 
-  ul.bullet-list li::before {
-    content: "▪";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
 
-  /* Skills Grid */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 12px;
-  }
+    ul.bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
 
-  .skill-box {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 18px;
-  }
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+    }
 
-  .skill-box-title {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-    font-family: var(--font-mono);
-  }
+    .skill-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
 
-  .pill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+    .skill-box-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-family: var(--font-mono);
+    }
 
-  .pill {
-    font-size: 0.78rem;
-    font-family: var(--font-mono);
-    background: var(--pill-bg);
-    color: var(--text-main);
-    padding: 3px 8px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    font-weight: 500;
-  }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
 
-  /* Interactive Activities Section */
-  .accordion-trigger {
-    width: 100%;
-    background: var(--card-bg);
-    border: 1px dashed var(--border-strong);
-    border-radius: 8px;
-    padding: 14px 20px;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-main);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
+    .pill {
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      background: var(--pill-bg);
+      color: var(--text-main);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-weight: 500;
+    }
 
-  .accordion-trigger:hover {
-    background: #f1f5f9;
-    border-color: var(--primary);
-    color: var(--primary);
-  }
+    /* Accordion Toggle Section */
+    .accordion-trigger {
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px dashed var(--border-strong);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
 
-  .accordion-content {
-    display: none;
-    margin-top: 14px;
-  }
+    .accordion-trigger:hover {
+      background: var(--pill-bg);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
 
-  .accordion-content.open {
-    display: block;
-  }
+    .accordion-content {
+      display: none;
+      margin-top: 14px;
+    }
 
-  .other-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 12px;
-  }
+    .accordion-content.open {
+      display: block;
+    }
 
-  footer {
-    border-top: 1px solid var(--border-strong);
-    padding-top: 24px;
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-  }
-</style>
-</style>
-   
+    .other-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-strong);
+      padding-top: 24px;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
   </style>
 </head>
 <body>
@@ -323,17 +320,17 @@
     <!-- Profile Card -->
     <header class="profile-card">
       <h1>Sneha Saha</h1>
-      <p class="subtitle">Software Developer | Spring Boot | REST APIs | Databases</p>
-      <p class="location-bar">Kolkata, West Bengal, India · +91 9123822426</p>
+      <p class="subtitle">Full-Stack Java Developer | Spring Boot & REST APIs</p>
+      <p class="location-bar">Kolkata, West Bengal, India · +91 9123822426[cite: 1]</p>
       
       <p class="summary">
-        Results-driven Full-Stack Java Developer with practical expertise in Spring Boot, React.js, and MongoDB. Demonstrated foundation in microservices and system design fundamentals, engineering scalable RESTful architectures, decoupled services, and optimized database schemas. Proven track record across 7+ full-stack and backend projects delivering API execution consistency, clean MVC separation, and unit-tested production code.
+        Results-driven Full-Stack Java Developer with practical expertise in Spring Boot, React.js, and MongoDB[cite: 1]. Demonstrated foundation in microservices and system design fundamentals, engineering scalable RESTful architectures, decoupled services, and optimized database schemas[cite: 1]. Proven track record across 7+ full-stack and backend projects delivering API execution consistency, clean MVC separation, and unit-tested production code[cite: 1].
       </p>
 
       <div class="actions">
         <a href="mailto:sahasneha773@gmail.com" class="btn">sahasneha773@gmail.com</a>
         <a href="https://github.com/SnehaSaha14" target="_blank" class="btn">GitHub Profile ↗</a>
-        <a href="resume.pdf" target="_blank" class="btn btn-primary">Download Resume</a>
+        <a href="resume.pdf" target="_blank" class="btn btn-primary">Download Resume (PDF)</a>
       </div>
     </header>
 
@@ -401,12 +398,12 @@
           <span class="card-title">1. User Management System</span>
           <a href="https://github.com/SnehaSaha14" target="_blank" class="btn" style="padding: 4px 10px; font-size: 0.78rem;">GitHub Repo ↗</a>
         </div>
-        <div class="tech-stack-row">Tech Stack: FastAPI, MongoDB Atlas, Swagger UI</div>
+        <div class="tech-stack-row">Tech Stack: FastAPI, MongoDB Atlas, Swagger UI[cite: 1]</div>
         <ul class="bullet-list">
-          <li>Developed RESTful CRUD APIs using FastAPI with asynchronous endpoint handling and request validation.</li>
-          <li>Integrated MongoDB Atlas for cloud-based document storage and efficient database operations.</li>
-          <li>Implemented exception handling and structured API responses to improve backend reliability and debugging.</li>
-          <li>Used Swagger UI for API documentation, endpoint testing, and request validation.</li>
+          <li>Developed RESTful CRUD APIs using FastAPI with asynchronous endpoint handling and request validation[cite: 1].</li>
+          <li>Integrated MongoDB Atlas for cloud-based document storage and efficient database operations[cite: 1].</li>
+          <li>Implemented exception handling and structured API responses to improve backend reliability and debugging[cite: 1].</li>
+          <li>Used Swagger UI for API documentation, endpoint testing, and request validation[cite: 1].</li>
         </ul>
       </div>
 
@@ -416,12 +413,12 @@
           <span class="card-title">2. Banking System</span>
           <a href="https://github.com/SnehaSaha14" target="_blank" class="btn" style="padding: 4px 10px; font-size: 0.78rem;">GitHub Repo ↗</a>
         </div>
-        <div class="tech-stack-row">Tech Stack: Spring Boot (v3.x), Java 21, MySQL, Spring Data JPA (Hibernate)</div>
+        <div class="tech-stack-row">Tech Stack: Spring Boot (v3.x), Java 21, MySQL, Spring Data JPA (Hibernate)[cite: 1]</div>
         <ul class="bullet-list">
-          <li>Engineered high-performance Data Exchange Interfaces for operations like account creation and fund transfers.</li>
-          <li>Designed a Normalized Schema in MySQL to ensure data integrity and maintained ACID-compliant logic.</li>
-          <li>Optimized CRUD operations and service endpoint performance for high-frequency transactions.</li>
-          <li>Conducted exhaustive testing via Postman to ensure seamless system communication.</li>
+          <li>Engineered high-performance Data Exchange Interfaces for operations like account creation and fund transfers[cite: 1].</li>
+          <li>Designed a Normalized Schema in MySQL to ensure data integrity and maintained ACID-compliant logic[cite: 1].</li>
+          <li>Optimized CRUD operations and service endpoint performance for high-frequency transactions[cite: 1].</li>
+          <li>Conducted exhaustive testing via Postman to ensure seamless system communication[cite: 1].</li>
         </ul>
       </div>
 
@@ -431,12 +428,12 @@
           <span class="card-title">3. Expense Tracker</span>
           <a href="https://github.com/SnehaSaha14" target="_blank" class="btn" style="padding: 4px 10px; font-size: 0.78rem;">GitHub Repo ↗</a>
         </div>
-        <div class="tech-stack-row">Tech Stack: Spring Boot, Java 17, MySQL, Spring Data JPA (Hibernate)</div>
+        <div class="tech-stack-row">Tech Stack: Spring Boot, Java 17, MySQL, Spring Data JPA (Hibernate)[cite: 1]</div>
         <ul class="bullet-list">
-          <li>Built a backend-based expense tracking application with complete CRUD functionality for financial record management.</li>
-          <li>Structured the application using layered MVC architecture with separate controller, service, and repository layers.</li>
-          <li>Used Spring Data JPA and Hibernate for entity mapping and database interaction with MySQL.</li>
-          <li>Implemented centralized exception handling (@ControllerAdvice) to standardize API responses and simplify debugging.</li>
+          <li>Built a backend-based expense tracking application with complete CRUD functionality for financial record management[cite: 1].</li>
+          <li>Structured the application using layered MVC architecture with separate controller, service, and repository layers[cite: 1].</li>
+          <li>Used Spring Data JPA and Hibernate for entity mapping and database interaction with MySQL[cite: 1].</li>
+          <li>Implemented centralized exception handling (@ControllerAdvice) to standardize API responses and simplify debugging[cite: 1].</li>
         </ul>
       </div>
     </section>
@@ -446,7 +443,7 @@
       <h2 class="section-title">Other Activities & Repositories</h2>
       
       <button class="accordion-trigger" id="activitiesToggle" onclick="toggleAccordion()">
-        <span>Additional Repositories</span>
+        <span>View Additional Repositories & Non-Resume Projects</span>
         <span id="accordionIcon" style="font-family: var(--font-mono); font-size: 1.1rem;">+</span>
       </button>
 
@@ -462,14 +459,7 @@
             <p style="font-size: 0.84rem; color: var(--text-body);">A book cataloging and library management repository handling record creation, retrieval, and schema persistence.</p>
           </div>
 
-          <div class="card" style="margin-bottom: 0;">
-            <div class="card-header">
-              <span class="card-title" style="font-size: 0.95rem;">Full-Stack & React Prototypes</span>
-              <a href="https://github.com/SnehaSaha14" target="_blank" class="btn" style="padding: 2px 8px; font-size: 0.75rem;">Repo ↗</a>
-            </div>
-            <div class="tech-stack-row" style="margin-bottom: 6px;">Tech Stack: React.js, Node.js</div>
-            <p style="font-size: 0.84rem; color: var(--text-body);">Single-page interface experiments connecting to decoupled REST endpoints and handling front-to-back state binding.</p>
-          </div>
+        
 
         </div>
       </div>
@@ -486,8 +476,8 @@
           <span class="meta-tag">Jun 2025 – Sep 2025 | Kolkata, India</span>
         </div>
         <ul class="bullet-list">
-          <li>Built interactive Power BI dashboards by transforming and analyzing structured datasets to generate meaningful business insights.</li>
-          <li>Filtered and organized complex datasets using Power Query and DAX to create clear visual reports for performance analysis and edge-case identification.</li>
+          <li>Built interactive Power BI dashboards by transforming and analyzing structured datasets to generate meaningful business insights[cite: 1].</li>
+          <li>Filtered and organized complex datasets using Power Query and DAX to create clear visual reports for performance analysis and edge-case identification[cite: 1].</li>
         </ul>
       </div>
     </section>
@@ -497,8 +487,8 @@
       <h2 class="section-title">Education</h2>
       <div class="card">
         <div class="card-header">
-          <span class="card-title">Bachelor of Computer Applications (BCA)</span>
-          <span class="meta-tag">June 2026 | CGPA: 7.62</span>
+          <span class="card-title">Bachelor of Computer Applications (BCA)</span>[cite: 1]
+          <span class="meta-tag">June 2026 | SGPA: 7.80+</span>[cite: 1]
         </div>
         <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 6px;">Bengal School of Technology & Management, affiliated with MAKAUT, Kolkata</p>
         <p style="font-size: 0.84rem; color: var(--text-muted);">Aditya Birla Vani Bharati — Class X (WBBSE 76%) & Class XII (CBSE 60%)</p>
